@@ -1,0 +1,271 @@
+body {
+    background-color: #060913; /* Ultra deep blue velvet background */
+    color: #e2e8f0;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.scroll-layout-wrapper {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+}
+
+/* LANDING HERO GRAPHICS PROFILE */
+.profile-hero {
+    text-align: center;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar-glow-frame {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #ff79c6; /* Neon Pink profile halo */
+    box-shadow: 0 0 35px rgba(255, 121, 198, 0.4),
+                0 0 70px rgba(139, 233, 253, 0.1);
+    margin-bottom: 25px;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-hero h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 56px;
+    margin: 0 0 10px 0;
+    background: linear-gradient(45deg, #ff79c6 30%, #8be9fd 70%); /* Pink to Blue gradient link */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(255, 121, 198, 0.2));
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #6272a4;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.scroll-arrow {
+    font-size: 11px;
+    color: #44475a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: floatingBounce 2s infinite ease-in-out;
+}
+
+@keyframes floatingBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); color: #8be9fd; }
+}
+
+/* SECTION SUB-HEADERS WITH ALTERNATING PALETTES */
+.wiki-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.section-divider-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-bottom: 10px;
+    margin: 0;
+}
+
+.section-divider-title.pink-accent {
+    color: #ff79c6;
+    border-bottom: 2px dashed rgba(255, 121, 198, 0.2);
+}
+
+.section-divider-title.blue-accent {
+    color: #8be9fd;
+    border-bottom: 2px dashed rgba(139, 233, 253, 0.2);
+}
+
+/* CORE DATA GRID LAYOUT MESH */
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.fact-card {
+    background: linear-gradient(135deg, rgba(15, 22, 42, 0.6) 0%, rgba(9, 13, 26, 0.8) 100%);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+
+.fact-card.double-width {
+    grid-column: span 2;
+}
+
+/* Alternating card border definitions */
+.fact-card.pink-border { border: 1px solid rgba(255, 121, 198, 0.15); }
+.fact-card.pink-border:hover { border-color: rgba(255, 121, 198, 0.5); box-shadow: 0 0 20px rgba(255, 121, 198, 0.15); }
+
+.fact-card.blue-border { border: 1px solid rgba(139, 233, 253, 0.15); }
+.fact-card.blue-border:hover { border-color: rgba(139, 233, 253, 0.5); box-shadow: 0 0 20px rgba(139, 233, 253, 0.15); }
+
+.fact-card h3 {
+    margin: 0 0 14px 0;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.fact-card.pink-border h3 { color: #ff79c6; }
+.fact-card.blue-border h3 { color: #8be9fd; }
+
+.fact-card p {
+    margin: 0;
+    font-size: 13.5px;
+    color: #bdc3c7;
+    line-height: 1.75;
+    font-weight: 300;
+}
+
+.fact-card ul {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 13.5px;
+    color: #bdc3c7;
+    line-height: 1.9;
+}
+
+.fact-card ul strong {
+    color: #f8f8f2;
+}
+
+/* HIGH-FIDELITY PICTURE FRAME MODULES */
+.photo-card {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #0b1120;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.photo-card img.wide-photo {
+    height: 280px;
+}
+
+.photo-caption {
+    font-size: 10.5px;
+    color: #6272a4;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* RE-COMPILATION SIGN-OFF PANEL */
+.wiki-footer {
+    text-align: center;
+    padding: 80px 20px 20px 20px;
+    border-top: 1px solid rgba(98, 114, 164, 0.2);
+}
+
+.wiki-footer p {
+    font-size: 14px;
+    color: #6272a4;
+    margin: 0 0 15px 0;
+    font-weight: 300;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 32px;
+    color: #ff79c6;
+    text-shadow: 0 0 15px rgba(255, 121, 198, 0.4);
+}
+
+/* INTERSECTION OBSERVER ANIMATION HARDWARE STEP MARKERS */
+.animate-card {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.animate-card.pop-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Responsive adjustment matrix */
+@media (max-width: 680px) {
+    .card-grid { grid-template-columns: 1fr; }
+    .fact-card.double-width { grid-column: span 1; }
+}
+
+.photo-card img {
+    width: 100%;
+    height: 300px;         /* Increased height so the frame is taller */
+    object-fit: contain;   /* CRITICAL: Shows the whole image without cropping or stretching */
+    background-color: #0b1120; /* Blends the empty sides into the card's background color */
+    border-radius: 12px;
+}
+
+.photo-card img.wide-photo {
+    height: 400px;         /* Gives the wide Exhibit C card a much larger portrait window */
+    object-fit: contain;   /* Ensures she looks perfectly natural and un-stretched */
+}
+.cursor-heart {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    animation: fadeAndRise 1s linear forwards;
+    opacity: 0.8;
+}
+
+@keyframes fadeAndRise {
+    0% { transform: translate(-50%, -50%) translateY(0) scale(1); opacity: 1; }
+    100% { transform: translate(-50%, -50%) translateY(-30px) scale(0); opacity: 0; }
+}
+.bg-sparkle {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0; /* Keeps them behind your cards and text */
+    opacity: 0;
+    animation: driftUp linear forwards;
+}
+
+@keyframes driftUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.4; } /* Keeps them soft and subtle */
+    90% { opacity: 0.4; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+.photo-card img {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease !important;
+}
+
+.photo-card:hover img {
+    transform: scale(1.03); /* Soft, elegant zoom */
+    filter: brightness(1.1); /* Subtly lights up her pictures */
+}
