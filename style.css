@@ -4,6 +4,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 .scroll-layout-wrapper {
@@ -15,7 +16,47 @@ body {
     gap: 90px;
 }
 
-/* LANDING HERO GRAPHICS PROFILE */
+/* ==========================================================================
+   FLOATING FIXED AUDIO NAVIGATION SYSTEM
+   ========================================================================== */
+.music-controller {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(15, 22, 42, 0.85);
+    border: 1px solid rgba(139, 233, 253, 0.3); /* Cyberpunk Blue default border */
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ff79c6; /* Neon Pink default text */
+    backdrop-filter: blur(8px);
+    z-index: 10001; /* Layer security bypass */
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(139, 233, 253, 0.1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    user-select: none;
+}
+
+.music-controller:hover {
+    border-color: #ff79c6;
+    box-shadow: 0 0 20px rgba(255, 121, 198, 0.3);
+    transform: scale(1.05);
+}
+
+.music-playing #musicIcon {
+    animation: notePulse 1.2s infinite ease-in-out;
+    display: inline-block;
+}
+
+@keyframes notePulse {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(15deg); color: #8be9fd; }
+}
+
+/* ==========================================================================
+   LANDING HERO GRAPHICS PROFILE
+   ========================================================================== */
 .profile-hero {
     text-align: center;
     padding: 60px 20px;
@@ -29,7 +70,7 @@ body {
     height: 160px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid #ff79c6; /* Neon Pink profile halo */
+    border: 3px solid #ff79c6;
     box-shadow: 0 0 35px rgba(255, 121, 198, 0.4),
                 0 0 70px rgba(139, 233, 253, 0.1);
     margin-bottom: 25px;
@@ -45,7 +86,7 @@ body {
     font-family: 'Dancing Script', cursive;
     font-size: 56px;
     margin: 0 0 10px 0;
-    background: linear-gradient(45deg, #ff79c6 30%, #8be9fd 70%); /* Pink to Blue gradient link */
+    background: linear-gradient(45deg, #ff79c6 30%, #8be9fd 70%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 15px rgba(255, 121, 198, 0.2));
@@ -73,7 +114,9 @@ body {
     50% { transform: translateY(-10px); color: #8be9fd; }
 }
 
-/* SECTION SUB-HEADERS WITH ALTERNATING PALETTES */
+/* ==========================================================================
+   SUB-HEADERS WITH ALTERNATING PALETTES
+   ========================================================================== */
 .wiki-section {
     display: flex;
     flex-direction: column;
@@ -98,7 +141,9 @@ body {
     border-bottom: 2px dashed rgba(139, 233, 253, 0.2);
 }
 
-/* CORE DATA GRID LAYOUT MESH */
+/* ==========================================================================
+   CORE DATA GRID LAYOUT MESH
+   ========================================================================== */
 .card-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -113,97 +158,55 @@ body {
     box-sizing: border-box;
 }
 
-.fact-card.double-width {
-    grid-column: span 2;
-}
+.fact-card.double-width { grid-column: span 2; }
 
-/* Alternating card border definitions */
 .fact-card.pink-border { border: 1px solid rgba(255, 121, 198, 0.15); }
 .fact-card.pink-border:hover { border-color: rgba(255, 121, 198, 0.5); box-shadow: 0 0 20px rgba(255, 121, 198, 0.15); }
 
 .fact-card.blue-border { border: 1px solid rgba(139, 233, 253, 0.15); }
 .fact-card.blue-border:hover { border-color: rgba(139, 233, 253, 0.5); box-shadow: 0 0 20px rgba(139, 233, 253, 0.15); }
 
-.fact-card h3 {
-    margin: 0 0 14px 0;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
+.fact-card h3 { margin: 0 0 14px 0; font-size: 16px; font-weight: 600; letter-spacing: 0.5px; }
 .fact-card.pink-border h3 { color: #ff79c6; }
 .fact-card.blue-border h3 { color: #8be9fd; }
 
-.fact-card p {
-    margin: 0;
-    font-size: 13.5px;
-    color: #bdc3c7;
-    line-height: 1.75;
-    font-weight: 300;
-}
+.fact-card p { margin: 0; font-size: 13.5px; color: #bdc3c7; line-height: 1.75; font-weight: 300; }
+.fact-card ul { margin: 0; padding-left: 20px; font-size: 13.5px; color: #bdc3c7; line-height: 1.9; }
+.fact-card ul strong { color: #f8f8f2; }
 
-.fact-card ul {
-    margin: 0;
-    padding-left: 20px;
-    font-size: 13.5px;
-    color: #bdc3c7;
-    line-height: 1.9;
-}
-
-.fact-card ul strong {
-    color: #f8f8f2;
-}
-
-/* HIGH-FIDELITY PICTURE FRAME MODULES */
-.photo-card {
-    padding: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    background: #0b1120;
-}
+/* ==========================================================================
+   HIGH-FIDELITY PICTURE FRAME MODULES & INTERACTIVE ZOOM
+   ========================================================================== */
+.photo-card { padding: 14px; display: flex; flex-direction: column; gap: 12px; background: #0b1120; }
 
 .photo-card img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 300px;
+    object-fit: contain;
+    background-color: #0b1120;
     border-radius: 12px;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease !important;
 }
 
-.photo-card img.wide-photo {
-    height: 280px;
+.photo-card img.wide-photo { height: 400px; object-fit: contain; }
+
+.photo-card:hover img {
+    transform: scale(1.03);
+    filter: brightness(1.1);
 }
 
-.photo-caption {
-    font-size: 10.5px;
-    color: #6272a4;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 1px;
-}
+.photo-caption { font-size: 10.5px; color: #6272a4; font-weight: 600; text-transform: uppercase; text-align: center; letter-spacing: 1px; }
 
-/* RE-COMPILATION SIGN-OFF PANEL */
-.wiki-footer {
-    text-align: center;
-    padding: 80px 20px 20px 20px;
-    border-top: 1px solid rgba(98, 114, 164, 0.2);
-}
+/* ==========================================================================
+   SIGN-OFF SIGNATURE & CHERRIES
+   ========================================================================== */
+.wiki-footer { text-align: center; padding: 80px 20px 20px 20px; border-top: 1px solid rgba(98, 114, 164, 0.2); }
+.wiki-footer p { font-size: 14px; color: #6272a4; margin: 0 0 15px 0; font-weight: 300; }
+.signature { font-family: 'Dancing Script', cursive; font-size: 32px; color: #ff79c6; text-shadow: 0 0 15px rgba(255, 121, 198, 0.4); }
 
-.wiki-footer p {
-    font-size: 14px;
-    color: #6272a4;
-    margin: 0 0 15px 0;
-    font-weight: 300;
-}
-
-.signature {
-    font-family: 'Dancing Script', cursive;
-    font-size: 32px;
-    color: #ff79c6;
-    text-shadow: 0 0 15px rgba(255, 121, 198, 0.4);
-}
-
-/* INTERSECTION OBSERVER ANIMATION HARDWARE STEP MARKERS */
+/* ==========================================================================
+   INTERSECTION REVEAL SYSTEMS & BACKGROUND SPARKLE BADGES
+   ========================================================================== */
 .animate-card {
     opacity: 0;
     transform: translateY(50px) scale(0.95);
@@ -212,29 +215,8 @@ body {
     will-change: transform, opacity;
 }
 
-.animate-card.pop-active {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-}
+.animate-card.pop-active { opacity: 1; transform: translateY(0) scale(1); }
 
-/* Responsive adjustment matrix */
-@media (max-width: 680px) {
-    .card-grid { grid-template-columns: 1fr; }
-    .fact-card.double-width { grid-column: span 1; }
-}
-
-.photo-card img {
-    width: 100%;
-    height: 300px;         /* Increased height so the frame is taller */
-    object-fit: contain;   /* CRITICAL: Shows the whole image without cropping or stretching */
-    background-color: #0b1120; /* Blends the empty sides into the card's background color */
-    border-radius: 12px;
-}
-
-.photo-card img.wide-photo {
-    height: 400px;         /* Gives the wide Exhibit C card a much larger portrait window */
-    object-fit: contain;   /* Ensures she looks perfectly natural and un-stretched */
-}
 .cursor-heart {
     position: fixed;
     pointer-events: none;
@@ -247,25 +229,17 @@ body {
     0% { transform: translate(-50%, -50%) translateY(0) scale(1); opacity: 1; }
     100% { transform: translate(-50%, -50%) translateY(-30px) scale(0); opacity: 0; }
 }
-.bg-sparkle {
-    position: absolute;
-    pointer-events: none;
-    z-index: 0; /* Keeps them behind your cards and text */
-    opacity: 0;
-    animation: driftUp linear forwards;
-}
+
+.bg-sparkle { position: absolute; pointer-events: none; z-index: 0; opacity: 0; animation: driftUp linear forwards; }
 
 @keyframes driftUp {
     0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-    10% { opacity: 0.4; } /* Keeps them soft and subtle */
+    10% { opacity: 0.4; }
     90% { opacity: 0.4; }
     100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
 }
-.photo-card img {
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease !important;
-}
 
-.photo-card:hover img {
-    transform: scale(1.03); /* Soft, elegant zoom */
-    filter: brightness(1.1); /* Subtly lights up her pictures */
+@media (max-width: 680px) {
+    .card-grid { grid-template-columns: 1fr; }
+    .fact-card.double-width { grid-column: span 1; }
 }
